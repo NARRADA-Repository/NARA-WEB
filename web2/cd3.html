@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flip Cards</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .box-item {
+      position: relative;
+      width: 100%;
+      margin-bottom: 230px;
+      perspective: 1000px; /* creates 3D perspective */
+    }
+
+    .flip-box {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d; /* allow child faces to exist in 3D */
+      transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+    }
+
+    /* Front + Back common */
+    .flip-box-front,
+    .flip-box-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 200px;
+      border-radius: 8px;
+      background-size: cover;
+      background-position: center;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden; /* Safari */
+    }
+
+    .flip-box-front {
+      transform: rotateY(0deg);
+      z-index: 2;
+    }
+
+    .flip-box-back {
+      transform: rotateY(180deg);
+    }
+
+    /* Flip on hover */
+    .box-item:hover .flip-box {
+      transform: rotateY(180deg);
+    }
+
+    .inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      padding: 40px 20px;
+      transform: translateY(-50%);
+      text-align: center;
+      color: #fff;
+    }
+
+    .flip-box-header {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .flip-box p {
+      font-size: 16px;
+      line-height: 1.5em;
+    }
+
+    .flip-box-img {
+      margin-top: 20px;
+    }
+
+    .flip-box-button {
+      background-color: transparent;
+      border: 2px solid #fff;
+      border-radius: 2px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 20px;
+      padding: 10px 15px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+
+    <div class="row">
+
+      <!-- Card 1 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="box-item">
+          <div class="flip-box">
+            <div class="flip-box-front" style=" background: 
+    linear-gradient(rgba(65, 148, 163, 0.8), rgba(49, 141, 177, 0.8)), 
+    url('img/div1.png') center/cover no-repeat;">
+              <div class="inner">
+                <h3 class="flip-box-header">ESD</h3>
+                <p>Environmental Studies Division</p>
+                <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="" class="flip-box-img">
+              </div>
+            </div>
+            <div class="flip-box-back" style="background-image: url('img/div1.png');">
+              <div class="inner">
+                <h3 class="flip-box-header">ESD</h3>
+                <p>Environmental Studies Division</p>
+               <a href="div-esd.php" style="text-decoration: none;" class="flip-box-button">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="box-item">
+          <div class="flip-box">
+            <div class="flip-box-front" style=" background: 
+    linear-gradient(rgba(65, 148, 163, 0.8), rgba(49, 141, 177, 0.8)), 
+    url('img/div2.png') center/cover no-repeat;">
+              <div class="inner">
+                <h3 class="flip-box-header">FTD</h3>
+                <p>Fishing Technology Division</p>
+                <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="" class="flip-box-img">
+              </div>
+            </div>
+            <div class="flip-box-back" style="background-image: url('img/div2.png');">
+              <div class="inner">
+                <h3 class="flip-box-header">FTD</h3>
+                <p>Fishing Technology Division</p>
+                <a href="div-ftd.php" style="text-decoration: none;" class="flip-box-button">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="box-item">
+          <div class="flip-box">
+            <div class="flip-box-front" style=" background: 
+    linear-gradient(rgba(65, 148, 163, 0.8), rgba(49, 141, 177, 0.8)), 
+    url('img/div3.png') center/cover no-repeat;">
+              <div class="inner">
+                <h3 class="flip-box-header">IARAD</h3>
+                <p>Inland Aquatic Resources & Aquaculture Division</p>
+                <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="" class="flip-box-img">
+              </div>
+            </div>
+            <div class="flip-box-back" style="background-image: url('img/div3.png');">
+              <div class="inner">
+                <h3 class="flip-box-header">IARAD</h3>
+                <p>Inland Aquatic Resources & Aquaculture Division</p>
+                <a href="div-iarad.php" style="text-decoration: none;" class="flip-box-button">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+<!--Section 2-->
+ <div class="row">
+
+      <!-- Card 4 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="box-item">
+          <div class="flip-box">
+            <div class="flip-box-front" style=" background: 
+    linear-gradient(rgba(65, 148, 163, 0.8), rgba(49, 141, 177, 0.8)), 
+    url('img/div4.png') center/cover no-repeat;">
+              <div class="inner">
+                <h3 class="flip-box-header">PHTD</h3>
+                <p>Post Harvest Technology Division</p>
+                <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="" class="flip-box-img">
+              </div>
+            </div>
+            <div class="flip-box-back" style="background-image: url('img/div4.png');">
+              
+              <div class="inner">
+                <h3 class="flip-box-header">PHTD</h3>
+                <p>Post Harvest Technology Division</p>
+               <a href="div-phtd.php" style="text-decoration: none;" class="flip-box-button">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="box-item">
+          <div class="flip-box">
+            <div class="flip-box-front" style=" background: 
+    linear-gradient(rgba(65, 148, 163, 0.8), rgba(49, 141, 177, 0.8)), 
+    url('img/div5.png') center/cover no-repeat;">
+              <div class="inner">
+                <h3 class="flip-box-header">MBRD</h3>
+                <p>Marine Biological Resources Division</p>
+                <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="" class="flip-box-img">
+              </div>
+            </div>
+            <div class="flip-box-back" style="background-image: url('img/div5.png');">
+              <div class="inner">
+                <h3 class="flip-box-header">MBRD</h3>
+                <p>Marine Biological Resources Division</p>
+                <a href="div-mbrd.php" style="text-decoration: none;" class="flip-box-button">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="box-item">
+          <div class="flip-box">
+            <div class="flip-box-front" style=" background: 
+    linear-gradient(rgba(65, 148, 163, 0.8), rgba(49, 141, 177, 0.8)), 
+    url('img/div6.png') center/cover no-repeat;">
+              <div class="inner">
+                <h3 class="flip-box-header">MED</h3>
+                <p>Monitoring and Evaluation Division</p>
+                <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="" class="flip-box-img">
+              </div>
+            </div>
+            <div class="flip-box-back" style="background-image: url('img/div6.png');">
+              <div class="inner">
+                <h3 class="flip-box-header">MED</h3>
+                <p>Monitoring and Evaluation Division</p>
+                <a href="div-med.php" style="text-decoration: none;" class="flip-box-button">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+<!--Section 3 -->
+<div class="row">
+
+      <!-- Card 4 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="box-item">
+          <div class="flip-box">
+            <div class="flip-box-front" style=" background: 
+    linear-gradient(rgba(65, 148, 163, 0.8), rgba(49, 141, 177, 0.8)), 
+    url('img/div7.png') center/cover no-repeat;">
+              <div class="inner">
+                <h3 class="flip-box-header">NHO</h3>
+                <p>Hydrographic Division</p>
+                <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="" class="flip-box-img">
+              </div>
+            </div>
+            <div class="flip-box-back" style="background-image: url('img/div7.png');">
+              <div class="inner">
+                <h3 class="flip-box-header">NHO</h3>
+                <p>Hydrographic Division</p>
+               <a href="div-nho.php" style="text-decoration: none;" class="flip-box-button">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="box-item">
+          <div class="flip-box">
+            <div class="flip-box-front" style=" background: 
+    linear-gradient(rgba(65, 148, 163, 0.8), rgba(49, 141, 177, 0.8)), 
+    url('img/div8.png') center/cover no-repeat;">
+              <div class="inner">
+                <h3 class="flip-box-header">NOD</h3>
+                <p>Oceanography Division</p>
+                <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="" class="flip-box-img">
+              </div>
+            </div>
+            <div class="flip-box-back" style="background-image: url('img/div8.png');">
+              <div class="inner">
+                <h3 class="flip-box-header">NOD</h3>
+                <p>Oceanography Division</p>
+                <a href="div-nho.php" style="text-decoration: none;" class="flip-box-button">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="box-item">
+          <div class="flip-box">
+            <div class="flip-box-front" style=" background: 
+    linear-gradient(rgba(65, 148, 163, 0.8), rgba(49, 141, 177, 0.8)), 
+    url('img/div9.png') center/cover no-repeat;">
+              <div class="inner">
+                <h3 class="flip-box-header">SEMD</h3>
+                <p>Socio-Economic & Marketing Division</p>
+                <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="" class="flip-box-img">
+              </div>
+            </div>
+            <div class="flip-box-back" style="background-image: url('img/div9.png');">
+              
+              <div class="inner">
+                <h3 class="flip-box-header">SEMD</h3>
+                <p>Socio-Economic & Marketing Division</p>
+                <a href="div-semd.php" style="text-decoration: none;" class="flip-box-button">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+ <div class="col-md-4 col-sm-6">
+        <div class="box-item">
+          <div class="flip-box">
+            <div class="flip-box-front" style=" background: 
+    linear-gradient(rgba(65, 148, 163, 0.8), rgba(49, 141, 177, 0.8)), 
+    url('img/div10.png') center/cover no-repeat;">
+              <div class="inner">
+                <h3 class="flip-box-header">ARC</h3>
+                <p>Aquacultur Research Center</p>
+                <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="" class="flip-box-img">
+              </div>
+            </div>
+            <div class="flip-box-back" style="background-image: url('img/div10.png');">
+              
+              <div class="inner">
+                <h3 class="flip-box-header">ARC</h3>
+                <p>Aquacultur Research Center</p>
+                <a href="div-arc.php" style="text-decoration: none;" class="flip-box-button">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
